@@ -1,0 +1,27 @@
+* {
+	margin:0;
+	padding:0;
+	border:0;
+}
+@base: #C0F400;
+.progressBtn {
+	position: relative;
+	z-index: 4;
+	background-color: @base;
+	border:0;
+	padding: 0.8em;
+	font-size: 1.2em;
+	border-radius: 3px;
+	color: green;
+	.progress-bar {
+		position:absolute;
+		display:block;
+		z-index:-10;
+		top:0;
+		left:0;
+		width:30%;
+		height:100%;
+		background-color: yellow;
+
+	}
+}
