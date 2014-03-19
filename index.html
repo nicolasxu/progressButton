@@ -7,18 +7,19 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="progressBtn.js"></script>
+	
 </head>
 <body>
 	<div class="container">
+		<button id="upload" class="progressBtn" data-api="plugin-progressBtn">Progress Button</button>
+		<button class="progressBtn" data-api="plugin-progressBtn">Progress Button</button>
+		<button class="progressBtn" data-api="plugin-progressBtn">Progress Button</button>
+		<button class="progressBtn" data-api="plugin-progressBtn">Progress Button</button>
 		<button class="progressBtn">Progress Button
-					<span class="progress-bar"></span>
+			<span class="progress-bar" style="width:30%"></span>
+			<span class="progress-text" style="width:30%"> 30%</span>
 		</button>
-		<button class="progressBtn">Progress Button</button>
-		<button class="progressBtn">Progress Button</button>
-		<button class="progressBtn">Progress Button</button>
-		<button>Progress Button</button>
-		<input type="button" class="progressBtn" value="button">
+		<input type="button" class="progressBtn" value="button" data-api="plugin-progressBtn">
 	</div>
-	
 </body>
 </html>
