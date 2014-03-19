@@ -1,0 +1,23 @@
+{
+  "name": "progressBtn jQuery Plugin",
+  "version": "0.1",
+  "main": "dist/progressBtn.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "build",
+    "speed",
+    "test",
+    "*.md",
+    "AUTHORS.txt",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "devDependencies": {
+    "jquery": "*"
+  },
+  "keywords": [
+    "progressBtn",
+    "javascript"
+  ]
+}
