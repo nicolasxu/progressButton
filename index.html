@@ -11,15 +11,45 @@
 </head>
 <body>
 	<div class="container">
-		<button id="upload" class="progressBtn" data-api="plugin-progressBtn">Progress Button</button>
-		<button class="progressBtn" data-api="plugin-progressBtn">Progress Button</button>
-		<button class="progressBtn" data-api="plugin-progressBtn">Progress Button</button>
-		<button class="progressBtn" data-api="plugin-progressBtn">Progress Button</button>
-		<button class="progressBtn">Progress Button
+		<button id="upload" class="progressBtn upload" data-api="plugin-progressBtn">Progress Button</button>
+		<button class="progressBtn upload" data-api="plugin-progressBtn">Progress Button</button>
+		<button class="progressBtn upload" data-api="plugin-progressBtn">Progress Button</button>
+		<button class="progressBtn upload" data-api="plugin-progressBtn">Progress Button</button>
+		<button class="progressBtn upload">Progress Button
 			<span class="progress-bar" style="width:30%"></span>
 			<span class="progress-text" style="width:30%"> 30%</span>
 		</button>
-		<input type="button" class="progressBtn" value="button" data-api="plugin-progressBtn">
+		<input type="button" class="progressBtn upload" value="button" data-api="plugin-progressBtn">
 	</div>
+	<script>
+	// simulating an async upload function 
+		function uploadPic(fileName, cb) {
+	  	var percent = 0;
+	  	var intervalID = setInterval(function () {
+		    percent = percent + 10;
+		    // console.log(percent);
+		    cb && cb(percent);
+		    if(percent >= 100) {
+		      clearInterval(intervalID);
+		      percent = 0;
+		    } // end of if
+		  }, 400); // end of setInterval()
+		}
+
+		$(document).ready(function(){
+			console.log('doc ready');
+			$('.container').on('click','.upload', function(event){
+				progressBtnObj = $(this).data('plugin-' + 'progressBtn');
+				console.log(progressBtnObj);
+				var updateProgress = progressBtnObj && progressBtnObj.setProgress;
+				uploadPic('fileNamexxx', $.proxy( updateProgress, progressBtnObj));
+			}); // end of on()
+		}); // end of ready()
+
+		// var progressBtnObj = $(this).data('plugin-' + 'progressBtn');
+				// console.log(progressBtnObj);
+				// var updateProgress = progressBtnObj && progressBtnObj.setProgress;
+				// uploadPic('fileNamexxx', $.proxy( updateProgress, progressBtnObj));
+	</script>
 </body>
 </html>
